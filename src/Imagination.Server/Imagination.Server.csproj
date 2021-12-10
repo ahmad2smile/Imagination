@@ -3,9 +3,16 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>Imagination</RootNamespace>
+        <UserSecretsId>edcefbe2-0f14-4434-80c8-8431dd66881e</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..</DockerfileContext>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Magick.NET-Q8-x64" Version="8.4.0" />
+      <PackageReference Include="Magick.NET.Core" Version="8.4.0" />
+      <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+      <PackageReference Include="OneOf" Version="3.0.203" />
       <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.2.0-alpha1" />
       <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc7" />
       <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc7" />

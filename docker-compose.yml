@@ -2,11 +2,12 @@ version: '2.2'
 
 services:
 
-  your_service:
-    # Please add your service here and serve it on port 5000.
+  mediaservice:
     build:
       dockerfile: Dockerfile
       context: .
+    ports:
+      - "5000:80"
     mem_limit: 512m
     mem_reservation: 512m
     depends_on:
