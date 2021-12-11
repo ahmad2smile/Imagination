@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using ImageMagick;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using OpenTelemetry.Context.Propagation;
@@ -13,6 +14,9 @@ internal static class Program
     {
         OpenTelemetry.Sdk.SetDefaultTextMapPropagator(new B3Propagator());
         CreateHostBuilder(args).Build().Run();
+
+        // NOTE: Pre-Initializing as else it loads + initializes native MagickImage library on first req
+        MagickNET.Initialize();
     }
 
     private static IHostBuilder CreateHostBuilder(string[] args) =>
